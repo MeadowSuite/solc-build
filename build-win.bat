@@ -108,7 +108,10 @@ cd %start_dir%
 
 
 goto :EOF
+
 :error
 cd "%start_dir%"
 echo Failed
 exit /b %errorlevel%
+
+:EOF
