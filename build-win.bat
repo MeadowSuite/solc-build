@@ -10,7 +10,7 @@ if "%1" == "x64" (
 if "%1" == "x86" (
     set boost_dir="C:/local/boost_1_67_0"
     set boost_lib_dir="lib64-msvc-14.1"
-    set boost_dl="https://iweb.dl.sourceforge.net/project/boost/boost-binaries/1.67.0/boost_1_67_0-msvc-14.1-32.exe"
+    set boost_dl="https://versaweb.dl.sourceforge.net/project/boost/boost-binaries/1.67.0/boost_1_67_0-msvc-14.1-64.exe"
     set boost_installer="boost_1_67_0-msvc-14.1-32.exe";
     set cmake_gen="Visual Studio 15 2017"
 )
@@ -19,21 +19,26 @@ if NOT "%1" == "x64" if NOT "%1" == "x86" (
     goto :error
 )
 
+set start_dir=%cd%
+set source_dir=%start_dir%/solidity
 
 if exist "%boost_dir%/%boost_lib_dir%" (
     ECHO Boost already installed, skipping download and install
 )
 if NOT exist "%boost_dir%/%boost_lib_dir%" (
-    ECHO Downloading boost...
-
-    powershell -Command "Invoke-WebRequest %boost_dl% -OutFile %boost_installer%" || goto :error
+    
+    if exist %boost_installer% (
+        ECHO Boost already downloaded: %boost_installer%
+    )
+    if NOT exist %boost_installer% (
+        ECHO Downloading boost from %boost_dl%
+        powershell -Command "Invoke-WebRequest %boost_dl% -OutFile %boost_installer%" || goto :error
+    )
 
     ECHO Installing boost...
-    START /WAIT %boost_installer% /silent || goto :error
+    %boost_installer% /silent || goto :error
 )
 
-set start_dir=%cd%
-set source_dir=%start_dir%/solidity
 cd %source_dir%
 
 if exist "build" (
