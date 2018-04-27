@@ -4,13 +4,13 @@ if "%1" == "x64" (
     set boost_dir="C:/local/boost_1_67_0"
     set boost_lib_dir="lib32-msvc-14.1"
     set boost_installer="boost_1_67_0-msvc-14.1-64.exe";
-    set boost_dl="https://versaweb.dl.sourceforge.net/project/boost/boost-binaries/1.67.0/boost_1_67_0-msvc-14.1-64.exe"
+    set boost_dl="https://iweb.dl.sourceforge.net/project/boost/boost-binaries/1.67.0/boost_1_67_0-msvc-14.1-64.exe"
     set cmake_gen="Visual Studio 15 2017 Win64"
 )
 if "%1" == "x86" (
     set boost_dir="C:/local/boost_1_67_0"
     set boost_lib_dir="lib64-msvc-14.1"
-    set boost_dl="https://versaweb.dl.sourceforge.net/project/boost/boost-binaries/1.67.0/boost_1_67_0-msvc-14.1-32.exe"
+    set boost_dl="https://iweb.dl.sourceforge.net/project/boost/boost-binaries/1.67.0/boost_1_67_0-msvc-14.1-32.exe"
     set boost_installer="boost_1_67_0-msvc-14.1-32.exe";
     set cmake_gen="Visual Studio 15 2017"
 )
