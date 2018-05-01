@@ -16,10 +16,11 @@ build_script:
     7z a win-libs.zip %APPVEYOR_BUILD_FOLDER%/build/* || exit /b
 
     appveyor PushArtifact win-libs.zip || exit /b
+  - cmd: set DATE=%DATE:~10,4%-%DATE:~7,2%-%DATE:~4,2%
 deploy:
-  release: Solc lib
+  tag: $(DATE)
+  release: $(DATE)
   description: Solc lib
-  tag: $(APPVEYOR_REPO_COMMIT_TIMESTAMP)
   provider: GitHub
   auth_token:
     secure: 4LMTwnlMHXDHt0CoHUU0nuCVy3y3VC+uiMgzR9GrLdZKQAEwZ51MPUxsnbQRYmJK
