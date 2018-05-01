@@ -16,3 +16,17 @@ build_script:
     7z a win-libs.zip %APPVEYOR_BUILD_FOLDER%/build/* || exit /b
 
     appveyor PushArtifact win-libs.zip || exit /b
+deploy:
+  release: Solc lib
+  description: Solc lib
+  tag: $(APPVEYOR_REPO_COMMIT_TIMESTAMP)
+  provider: GitHub
+  auth_token:
+    secure: 4LMTwnlMHXDHt0CoHUU0nuCVy3y3VC+uiMgzR9GrLdZKQAEwZ51MPUxsnbQRYmJK
+  artifact: win-libs.zip
+  force_update: true
+  draft: false
+  prerelease: false
+  on:
+    branch: master
+    appveyor_repo_tag: true
