@@ -16,7 +16,7 @@ build_script:
     7z a win-libs.zip %APPVEYOR_BUILD_FOLDER%/build/* || exit /b
 
     appveyor PushArtifact win-libs.zip || exit /b
-  - cmd: set DATE=%DATE:~10,4%-%DATE:~7,2%-%DATE:~4,2%
+- cmd: set DATE=%DATE:~10,4%-%DATE:~7,2%-%DATE:~4,2%
 deploy:
   tag: $(DATE)
   release: $(DATE)
