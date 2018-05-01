@@ -16,3 +16,5 @@ cmake .. \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
     -DBoost_USE_STATIC_LIBS=Off
 
+make -j2
+
