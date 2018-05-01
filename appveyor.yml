@@ -11,19 +11,13 @@ skip_tags: true
 
 build_script:
 - cmd: >-
-    set RELEASE_TITLE=%DATE:~10,4%-%DATE:~7,2%-%DATE:~4,2% /b
-
-    echo %RELEASE_TITLE% /b
-
-    git submodule update --init --recursive || exit /b
-
-    build-win.bat x64 || exit /b
-
-    build-win.bat x86 || exit /b
-
-    7z a win-libs.zip %APPVEYOR_BUILD_FOLDER%/build/* || exit /b
-
-    appveyor PushArtifact win-libs.zip || exit /b
+    set RELEASE_TITLE=%DATE:~10,4%-%DATE:~7,2%-%DATE:~4,2%
+    echo %RELEASE_TITLE%
+    git submodule update --init --recursive || exit
+    build-win.bat x64 || exit
+    build-win.bat x86 || exit
+    7z a win-libs.zip %APPVEYOR_BUILD_FOLDER%/build/* || exit
+    appveyor PushArtifact win-libs.zip
 deploy:
   tag: $(RELEASE_TITLE)
   release: $(RELEASE_TITLE)
