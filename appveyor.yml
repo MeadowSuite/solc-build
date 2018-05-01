@@ -5,6 +5,9 @@ cache:
 - C:\solc-build\boost_1_67_0-msvc-14.1-32.exe
 - C:\solc-build\boost_1_67_0-msvc-14.1-64.exe
 - C:\local\boost_1_67_0
+branches:
+  only:
+    - master
 build_script:
 - cmd: >-
     git submodule update --init --recursive || exit /b
