@@ -29,7 +29,7 @@ matrix:
       before_install:
         - git submodule update --init --recursive
       install:
-        - brew install boost
+        # - brew install boost
       script:
         - ./build-macos.sh
       before_deploy:
