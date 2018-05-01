@@ -4,12 +4,17 @@ clone_folder: c:\solc-build
 cache:
 - C:\solc-build\boost_1_67_0-msvc-14.1-32.exe
 - C:\solc-build\boost_1_67_0-msvc-14.1-64.exe
-- C:\local\boost_1_67_0
 branches:
   only:
     - master
+skip_tags: true
+
 build_script:
 - cmd: >-
+    set RELEASE_TITLE=%DATE:~10,4%-%DATE:~7,2%-%DATE:~4,2% /b
+
+    echo %RELEASE_TITLE% /b
+
     git submodule update --init --recursive || exit /b
 
     build-win.bat x64 || exit /b
@@ -19,10 +24,9 @@ build_script:
     7z a win-libs.zip %APPVEYOR_BUILD_FOLDER%/build/* || exit /b
 
     appveyor PushArtifact win-libs.zip || exit /b
-- cmd: set DATE=%DATE:~10,4%-%DATE:~7,2%-%DATE:~4,2%
 deploy:
-  tag: $(DATE)
-  release: $(DATE)
+  tag: $(RELEASE_TITLE)
+  release: $(RELEASE_TITLE)
   description: Solc lib
   provider: GitHub
   auth_token:
@@ -33,4 +37,3 @@ deploy:
   prerelease: false
   on:
     branch: master
-    appveyor_repo_tag: true
