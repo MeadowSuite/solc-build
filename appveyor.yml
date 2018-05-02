@@ -10,7 +10,7 @@ branches:
 skip_tags: true
 
 build_script:
-  - set RELEASE_TITLE=%DATE:~10,4%-%DATE:~7,2%-%DATE:~4,2%
+  - set RELEASE_TITLE=%DATE:~10,4%-%DATE:~4,2%-%DATE:~7,2%
   - echo %RELEASE_TITLE%
   - git submodule update --init --recursive || exit
   - build-win.bat x64 || exit
