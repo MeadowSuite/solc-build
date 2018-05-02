@@ -16,4 +16,4 @@ Scripts to build dynamic solc libs for several platforms
 
 ### Download
 
-[Compiled lib downloads](releases)
+[Compiled lib downloads](//github.com/hosho/solc-build/releases)
