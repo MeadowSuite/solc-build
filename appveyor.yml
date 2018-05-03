@@ -17,6 +17,9 @@ build_script:
   - build-win.bat x86 || exit
   - 7z a win-libs.zip %APPVEYOR_BUILD_FOLDER%/build/* || exit
   - appveyor PushArtifact win-libs.zip
+  - build-win.bat x64 Debug || exit
+  - 7z a win-libs-debug.zip %APPVEYOR_BUILD_FOLDER%/solidity/build/libsolc/Debug/solc.dll || exit
+  - 7z a win-libs-debug.zip %APPVEYOR_BUILD_FOLDER%/solidity/build/libsolc/Debug/solc.pdb || exit
 
 deploy:
   tag: $(RELEASE_TITLE)
@@ -25,7 +28,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: 4LMTwnlMHXDHt0CoHUU0nuCVy3y3VC+uiMgzR9GrLdZKQAEwZ51MPUxsnbQRYmJK
-  artifact: win-libs.zip
+  artifact: win-libs.zip,win-libs-debug.zip
   force_update: true
   draft: false
   prerelease: false

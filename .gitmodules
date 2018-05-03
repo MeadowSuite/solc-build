@@ -1,4 +1,4 @@
 [submodule "solidity"]
 	path = solidity
-url=https://github.com/ethereum/solidity.git
+	url=https://github.com/ethereum/solidity.git
 	branch = release
