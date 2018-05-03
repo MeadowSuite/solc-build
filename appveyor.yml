@@ -20,6 +20,7 @@ build_script:
   - build-win.bat x64 Debug || exit
   - 7z a win-libs-debug.zip %APPVEYOR_BUILD_FOLDER%/solidity/build/libsolc/Debug/solc.dll || exit
   - 7z a win-libs-debug.zip %APPVEYOR_BUILD_FOLDER%/solidity/build/libsolc/Debug/solc.pdb || exit
+  - appveyor PushArtifact win-libs-debug.zip
 
 deploy:
   tag: $(RELEASE_TITLE)
