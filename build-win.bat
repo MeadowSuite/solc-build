@@ -106,6 +106,9 @@ echo Building solidity solution
 cd "%source_dir%/build-%build_config%-%arch%"
 msbuild solidity.sln /t:libsolc /p:Configuration=%build_config% /m:4 /v:minimal || goto :error
 
+cd %start_dir%
+
+
 goto :EOF
 
 :error
