@@ -8,7 +8,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>https://github.com/ethereum/solidity/blob/develop/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/hosho/solc-build/</projectUrl>
-    <description>This package contains platform-specific native code builds of libsolc.</description>
+    <description>This package contains platform-specific native code builds of libsolc. Included: osx-x64/libsolc.dylib, linux-x64/libsolc.so, win-x64/solc.dll, win-x86/solc.dll</description>
     <tags>solc solclib libsolc solidity compiler sol</tags>
   </metadata>
   <files>
