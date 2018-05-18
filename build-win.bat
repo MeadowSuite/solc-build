@@ -46,16 +46,16 @@ if NOT exist %boost_lib_dir% (
 
 cd %source_dir%
 
-if exist "build" (
+if exist "build-%build_config%-%arch%" (
     echo Cleaning build directory
     del /S /Q build\* 1>nul
-    >nul 2>nul dir /a-d /s "build\*" && (echo Failed to clean build directory & goto :error)
+    >nul 2>nul dir /a-d /s "build-%build_config%-%arch%\*" && (echo Failed to clean build directory & goto :error)
 )
-if NOT exist "build" (
-    mkdir "build" || goto :error
+if NOT exist "build-%build_config%-%arch%" (
+    mkdir "build-%build_config%-%arch%" || goto :error
 )
 
-cd "%source_dir%/build" || goto :error
+cd "%source_dir%/build-%build_config%-%arch%" || goto :error
 
 echo Patching libsolc cmake to build shared lib
 set solc_cmake=%source_dir%/libsolc/CMakeLists.txt
@@ -86,7 +86,7 @@ echo Preparing jsoncpp source
 msbuild jsoncpp-project.vcxproj /p:Configuration=%build_config% /m:4 /v:minimal
 
 echo Cmake generation for msvc jsoncpp project with static runtime linking
-cd "%source_dir%/build/deps/src/jsoncpp-project-build"
+cd "%source_dir%/build-%build_config%-%arch%/deps/src/jsoncpp-project-build"
 del CMakeCache.txt
 cmake -G %cmake_gen% "../jsoncpp-project" ^
     -DCMAKE_SUPPRESS_REGENERATION=TRUE ^
@@ -96,21 +96,15 @@ cmake -G %cmake_gen% "../jsoncpp-project" ^
 echo Building jsoncpp static lib
 msbuild "src/lib_json/jsoncpp_lib_static.vcxproj" ^
     /p:Configuration=%build_config% /m:4 /v:minimal ^
-    /p:OutDir="%source_dir%/build/deps/lib/" ^
+    /p:OutDir="%source_dir%/build-%build_config%-%arch%/deps/lib/" ^
     /p:AssemblyName="jsoncpp" ^
     /p:TargetName="jsoncpp" ^
     || goto :error
 
 
 echo Building solidity solution
-cd "%source_dir%/build"
+cd "%source_dir%/build-%build_config%-%arch%"
 msbuild solidity.sln /t:libsolc /p:Configuration=%build_config% /m:4 /v:minimal || goto :error
-
-echo Copying build files
-cd %start_dir%
-robocopy "%source_dir%/build/libsolc/%build_config%" "%start_dir%/build/win-%1" solc.dll
-cd %start_dir%
-
 
 goto :EOF
 
