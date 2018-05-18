@@ -20,8 +20,8 @@ build_script:
   - 7z a win-x86.zip %APPVEYOR_BUILD_FOLDER%/solidity/build-RelWithDebInfo-32/libsolc/RelWithDebInfo/solc.dll || exit
   - appveyor PushArtifact win-x86.zip
   - build-win.bat x64 Debug || exit
-  - 7z a win-x64-debug.zip %APPVEYOR_BUILD_FOLDER%/solidity/build/libsolc/Debug/solc.dll || exit
-  - 7z a win-x64-debug.zip %APPVEYOR_BUILD_FOLDER%/solidity/build/libsolc/Debug/solc.pdb || exit
+  - 7z a win-x64-debug.zip %APPVEYOR_BUILD_FOLDER%/solidity/build-Debug-64/libsolc/Debug/solc.dll || exit
+  - 7z a win-x64-debug.zip %APPVEYOR_BUILD_FOLDER%/solidity/build-Debug-64/libsolc/Debug/solc.pdb || exit
   - appveyor PushArtifact win-x64-debug.zip
 
 deploy:
