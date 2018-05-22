@@ -5,21 +5,25 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>native\win-x64\solc.dll</Link>
       <Visible>false</Visible>
+      <Pack>false</Pack>
     </Content>
     <Content Include="$(MSBuildThisFileDirectory)..\..\runtimes\win-x86\native\solc.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>native\win-x86\solc.dll</Link>
       <Visible>false</Visible>
+      <Pack>false</Pack>
     </Content>
     <Content Include="$(MSBuildThisFileDirectory)..\..\runtimes\linux-x64\native\libsolc.so">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>native\linux-x64\libsolc.so</Link>
       <Visible>false</Visible>
+      <Pack>false</Pack>
     </Content>
     <Content Include="$(MSBuildThisFileDirectory)..\..\runtimes\osx-x64\native\libsolc.dylib">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>native\osx-x64\libsolc.dylib</Link>
       <Visible>false</Visible>
+      <Pack>false</Pack>
     </Content>
   </ItemGroup>
 </Project>
