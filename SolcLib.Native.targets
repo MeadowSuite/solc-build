@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)..\..\runtimes\win-x64\native\solc.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>native\win-x64\solc.dll</Link>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)..\..\runtimes\win-x86\native\solc.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>native\win-x86\solc.dll</Link>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)..\..\runtimes\linux-x64\native\libsolc.so">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>native\linux-x64\libsolc.so</Link>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)..\..\runtimes\osx-x64\native\libsolc.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>native\osx-x64\libsolc.dylib</Link>
+    </Content>
+  </ItemGroup>
+</Project>

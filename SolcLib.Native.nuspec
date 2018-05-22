@@ -16,5 +16,6 @@
     <file src="lib/osx-x64/libsolc.dylib" target="runtimes/osx-x64/native/libsolc.dylib" />
     <file src="lib/win-x64/solc.dll" target="runtimes/win-x64/native/solc.dll" />
     <file src="lib/win-x86/solc.dll" target="runtimes/win-x86/native/solc.dll" />
+    <file src="SolcLib.Native.targets" target="build/netstandard1.0"/>
   </files>
 </package>
