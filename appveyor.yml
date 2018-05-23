@@ -30,7 +30,7 @@ deploy:
   description: Solc lib
   provider: GitHub
   auth_token:
-    secure: 4LMTwnlMHXDHt0CoHUU0nuCVy3y3VC+uiMgzR9GrLdZKQAEwZ51MPUxsnbQRYmJK
+    secure: 28Oe+p1iAuhqRSPD1+oChgzTr52yyjmA+0c64Ca8dCrlI2VHJ4dy+B40dZjF93on
   artifact: win-x64.zip,win-x86.zip,win-x64-debug.zip
   force_update: true
   draft: false
