@@ -46,16 +46,17 @@ if NOT exist %boost_lib_dir% (
 
 cd %source_dir%
 
-if exist "build-%build_config%-x%arch%" (
-    echo Cleaning build directory
-    del /S /Q build\* 1>nul
-    >nul 2>nul dir /a-d /s "build-%build_config%-x%arch%\*" && (echo Failed to clean build directory & goto :error)
+set build_output_dir=build-%build_config%-x%arch%
+
+if exist "%build_output_dir%" (
+    echo Cleaning build directory: %build_output_dir%
+    powershell -Command "Remove-Item -Recurse -Force '%build_output_dir%'" || goto :error
 )
-if NOT exist "build-%build_config%-x%arch%" (
-    mkdir "build-%build_config%-x%arch%" || goto :error
+if NOT exist "%build_output_dir%" (
+    mkdir "%build_output_dir%" || goto :error
 )
 
-cd "%source_dir%/build-%build_config%-x%arch%" || goto :error
+cd "%source_dir%/%build_output_dir%" || goto :error
 
 echo Patching libsolc cmake to build shared lib
 set solc_cmake=%source_dir%/libsolc/CMakeLists.txt
@@ -83,10 +84,10 @@ cmake -G %cmake_gen% .. ^
     || goto :error
 
 echo Preparing jsoncpp source
-msbuild jsoncpp-project.vcxproj /p:Configuration=%build_config% /m:4 /v:minimal
+msbuild jsoncpp-project.vcxproj /p:Configuration=%build_config% /m:%NUMBER_OF_PROCESSORS% /v:minimal
 
 echo Cmake generation for msvc jsoncpp project with static runtime linking
-cd "%source_dir%/build-%build_config%-x%arch%/deps/src/jsoncpp-project-build"
+cd "%source_dir%/%build_output_dir%/deps/src/jsoncpp-project-build"
 del CMakeCache.txt
 cmake -G %cmake_gen% "../jsoncpp-project" ^
     -DCMAKE_SUPPRESS_REGENERATION=TRUE ^
@@ -95,16 +96,16 @@ cmake -G %cmake_gen% "../jsoncpp-project" ^
 
 echo Building jsoncpp static lib
 msbuild "src/lib_json/jsoncpp_lib_static.vcxproj" ^
-    /p:Configuration=%build_config% /m:4 /v:minimal ^
-    /p:OutDir="%source_dir%/build-%build_config%-x%arch%/deps/lib/" ^
+    /p:Configuration=%build_config% /m:%NUMBER_OF_PROCESSORS% /v:minimal ^
+    /p:OutDir="%source_dir%/%build_output_dir%/deps/lib/" ^
     /p:AssemblyName="jsoncpp" ^
     /p:TargetName="jsoncpp" ^
     || goto :error
 
 
 echo Building solidity solution
-cd "%source_dir%/build-%build_config%-x%arch%"
-msbuild solidity.sln /t:libsolc /p:Configuration=%build_config% /m:4 /v:minimal || goto :error
+cd "%source_dir%/%build_output_dir%"
+msbuild solidity.sln /t:libsolc /p:Configuration=%build_config% /m:%NUMBER_OF_PROCESSORS% /v:minimal || goto :error
 
 cd %start_dir%
 
