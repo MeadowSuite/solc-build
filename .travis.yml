@@ -9,9 +9,17 @@ matrix:
     - os: linux
       env: 
         - OS=linux_x64
-      compiler:
-        - gcc
+      compiler: g++-7
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-7
+      env:
+        - COMPILER_OVERRIDE="CC=gcc-7 CXX=g++-7"
       before_install:
+        - export "${COMPILER_OVERRIDE}"
         - git submodule update --init --recursive
       script:
         - ./build-linux.sh

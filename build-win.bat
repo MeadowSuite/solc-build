@@ -15,7 +15,7 @@ if "%1" == "x86" (
 
 set build_config=%2
 if "%2" == "" (
-    set build_config="RelWithDebInfo"
+    set build_config="Release"
 )
 
 set boost_dir=C:/local/boost_1_67_0
@@ -66,8 +66,8 @@ echo Creating cmake override to force static linking to runtime
 set cxx_flag_overrides="%source_dir%/cmake/cxx_flag_overrides.cmake"
 echo set(CMAKE_CXX_FLAGS_DEBUG_INIT          "/MT /Zi /Od /Ob0 /D NDEBUG")  >> %cxx_flag_overrides%
 echo set(CMAKE_CXX_FLAGS_MINSIZEREL_INIT     "/MT /O1 /Ob1 /D NDEBUG")      >> %cxx_flag_overrides%
-echo set(CMAKE_CXX_FLAGS_RELEASE_INIT        "/MT /O2 /Ob2 /D NDEBUG")      >> %cxx_flag_overrides%
-echo set(CMAKE_CXX_FLAGS_RELWITHDEBINFO_INIT "/MT /Zi /O2 /Ob1 /D NDEBUG")  >> %cxx_flag_overrides%
+echo set(CMAKE_CXX_FLAGS_RELEASE_INIT        "/MT /O2 /Ob2 /D NDEBUG")  >> %cxx_flag_overrides%
+echo set(CMAKE_CXX_FLAGS_RELWITHDEBINFO_INIT "/MT /Z7 /O2 /Ob1 /D NDEBUG")  >> %cxx_flag_overrides%
 
 echo Cmake generation for msvc solidity project
 cmake -G %cmake_gen% .. ^
