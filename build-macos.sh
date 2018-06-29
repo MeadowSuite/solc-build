@@ -14,6 +14,6 @@ cmake .. \
     -DTESTS=Off \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
-    -DBoost_USE_STATIC_LIBS=Off
+    -DBoost_USE_STATIC_LIBS=On
 
 make libsolc -j4
