@@ -9,11 +9,8 @@ matrix:
     - os: linux
       env: 
         - OS=linux_x64
-        - COMPILER=g++-7
-#        - COMPILER_OVERRIDE="CC=gcc-7 && CXX=g++-7"
       dist: trusty
       sudo: required
-      compiler: gcc
       addons:
         apt:
           sources:
@@ -21,7 +18,7 @@ matrix:
           packages:
             - g++-7
       before_install:
-#        - eval "${COMPILER_OVERRIDE}"
+        - export CXX=g++-7 CC=gcc-7
         - git submodule update --init --recursive
       script:
         - ./build-linux.sh
@@ -44,8 +41,6 @@ matrix:
       osx_image: xcode9.3
       before_install:
         - git submodule update --init --recursive
-      install:
-        # - brew install boost
       script:
         - ./build-macos.sh
       before_deploy:
