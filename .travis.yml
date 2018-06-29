@@ -9,6 +9,7 @@ matrix:
     - os: linux
       env: 
         - OS=linux_x64
+      dist: trusty
       compiler: g++-7
       addons:
         apt:
