@@ -20,7 +20,7 @@ for:
   -
     matrix:
       only:
-        - arch: x64
+        arch: x64
     build_script:
       - build-win.bat x64 || exit
       - 7z a win-x64.zip %APPVEYOR_BUILD_FOLDER%/solidity/build-Release-64/libsolc/Release/solc.dll || exit
@@ -41,7 +41,7 @@ for:
   -
     matrix:
       only:
-        - arch: x86
+        arch: x86
     build_script:
       - build-win.bat x86 || exit
       - 7z a win-x86.zip %APPVEYOR_BUILD_FOLDER%/solidity/build-Release-32/libsolc/Release/solc.dll || exit
