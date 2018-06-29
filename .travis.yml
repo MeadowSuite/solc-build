@@ -18,9 +18,9 @@ matrix:
           packages:
             - g++-7
       env:
-        - COMPILER_OVERRIDE="CC=gcc-7 CXX=g++-7"
+        - COMPILER_OVERRIDE="CC=gcc-7 && CXX=g++-7"
       before_install:
-        - export "${COMPILER_OVERRIDE}"
+        - eval "${COMPILER_OVERRIDE}"
         - git submodule update --init --recursive
       script:
         - ./build-linux.sh
