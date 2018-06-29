@@ -16,46 +16,21 @@ before_build:
   - set RELEASE_TITLE=%DATE:~10,4%-%DATE:~4,2%-%DATE:~7,2%
   - echo %RELEASE_TITLE%
   - git submodule update --init --recursive || exit
-for:
-  -
-    matrix:
-      only:
-        arch: x64
-    build_script:
-      - build-win.bat x64 || exit
-      - 7z a win-x64.zip %APPVEYOR_BUILD_FOLDER%/solidity/build-Release-64/libsolc/Release/solc.dll || exit
-      - appveyor PushArtifact win-x64.zip
-    deploy:
-      tag: $(RELEASE_TITLE)
-      release: $(RELEASE_TITLE)
-      description: Solc lib
-      provider: GitHub
-      auth_token:
-        secure: 28Oe+p1iAuhqRSPD1+oChgzTr52yyjmA+0c64Ca8dCrlI2VHJ4dy+B40dZjF93on
-      artifact: win-x64.zip
-      force_update: true
-      draft: false
-      prerelease: false
-      on:
-        branch: master
-  -
-    matrix:
-      only:
-        arch: x86
-    build_script:
-      - build-win.bat x86 || exit
-      - 7z a win-x86.zip %APPVEYOR_BUILD_FOLDER%/solidity/build-Release-32/libsolc/Release/solc.dll || exit
-      - appveyor PushArtifact win-x86.zip
-    deploy:
-      tag: $(RELEASE_TITLE)
-      release: $(RELEASE_TITLE)
-      description: Solc lib
-      provider: GitHub
-      auth_token:
-        secure: 28Oe+p1iAuhqRSPD1+oChgzTr52yyjmA+0c64Ca8dCrlI2VHJ4dy+B40dZjF93on
-      artifact: win-x86.zip
-      force_update: true
-      draft: false
-      prerelease: false
-      on:
-        branch: master
+
+build_script:
+  - build-win.bat %arch% || exit
+  - 7z a win-%arch%.zip %APPVEYOR_BUILD_FOLDER%/solidity/build-Release-x%arch%/libsolc/Release/solc.dll || exit
+  - appveyor PushArtifact win-%arch%.zip
+deploy:
+  tag: $(RELEASE_TITLE)
+  release: $(RELEASE_TITLE)
+  description: Solc lib
+  provider: GitHub
+  auth_token:
+    secure: 28Oe+p1iAuhqRSPD1+oChgzTr52yyjmA+0c64Ca8dCrlI2VHJ4dy+B40dZjF93on
+  artifact: win-%arch%.zip
+  force_update: true
+  draft: false
+  prerelease: false
+  on:
+    branch: master
