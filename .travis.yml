@@ -9,18 +9,19 @@ matrix:
     - os: linux
       env: 
         - OS=linux_x64
+        - COMPILER=g++-7
+#        - COMPILER_OVERRIDE="CC=gcc-7 && CXX=g++-7"
       dist: trusty
-      compiler: g++-7
+      sudo: required
+      compiler: gcc
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
             - g++-7
-      env:
-        - COMPILER_OVERRIDE="CC=gcc-7 && CXX=g++-7"
       before_install:
-        - eval "${COMPILER_OVERRIDE}"
+#        - eval "${COMPILER_OVERRIDE}"
         - git submodule update --init --recursive
       script:
         - ./build-linux.sh
