@@ -7,12 +7,12 @@ branches:
 matrix:
   include:
     - os: linux
+      env: 
+        - OS=linux_x64
       compiler:
-        - clang
+        - gcc
       before_install:
         - git submodule update --init --recursive
-      install:
-        - sudo apt-get install libboost-all-dev
       script:
         - ./build-linux.sh
       before_deploy:
@@ -29,6 +29,8 @@ matrix:
         skip_cleanup: true
 
     - os: osx
+      env:
+        - OS=macos_x64
       osx_image: xcode9.3
       before_install:
         - git submodule update --init --recursive
