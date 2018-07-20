@@ -1,11 +1,14 @@
 #!/bin/bash
 
-wget https://downloads.sourceforge.net/project/boost/boost/1.67.0/boost_1_67_0.tar.bz2 -O boost_1_67_0.tar.bz2
-tar --bzip2 -xf boost_1_67_0.tar.bz2
-cd boost_1_67_0
-./bootstrap.sh --with-libraries=regex,filesystem,program_options,system,test
-./b2 -j4 link=static cxxflags=-fPIC cflags=-fPIC
-cd ..
+if [ "$(ls -A boost_1_67_0)" ]
+then
+    wget https://downloads.sourceforge.net/project/boost/boost/1.67.0/boost_1_67_0.tar.bz2 -O boost_1_67_0.tar.bz2
+    tar --bzip2 -xf boost_1_67_0.tar.bz2
+    cd boost_1_67_0
+    ./bootstrap.sh --with-libraries=regex,filesystem,program_options,system,test
+    ./b2 -j4 link=static cxxflags=-fPIC cflags=-fPIC
+    cd ..
+fi
 
 if [ -z "$1" ]
 then
