@@ -1,20 +1,20 @@
 [submodule "solidity"]
 	path = solidity
-	url = https://github.com/hosho/solidity.git
+url=git@github.com:hosho/solidity.git
 	branch = release
 [submodule "solidity-v0.4.20"]
 	path = solidity-v0.4.20
-	url = https://github.com/hosho/solidity.git
+url=git@github.com:hosho/solidity.git
 	branch = release
 [submodule "solidity-v0.4.21"]
 	path = solidity-v0.4.21
-	url = https://github.com/hosho/solidity.git
+url=git@github.com:hosho/solidity.git
 	branch = release
 [submodule "solidity-v0.4.22"]
 	path = solidity-v0.4.22
-	url = https://github.com/hosho/solidity.git
+url=git@github.com:hosho/solidity.git
 	branch = release
 [submodule "solidity-v0.4.23"]
 	path = solidity-v0.4.23
-	url = https://github.com/hosho/solidity.git
+url=git@github.com:hosho/solidity.git
 	branch = release
