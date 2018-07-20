@@ -1,6 +1,11 @@
 #!/bin/bash
 
-cd solidity
+if [ -z "$1" ]
+then
+    cd solidity
+else
+    cd "solidity-$1"
+if
 
 sed -i -e 's/DCMAKE_POSITION_INDEPENDENT_CODE=${BUILD_SHARED_LIBS}/DCMAKE_POSITION_INDEPENDENT_CODE=ON/g' cmake/jsoncpp.cmake
 

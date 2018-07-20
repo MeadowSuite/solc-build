@@ -13,10 +13,12 @@ if "%1" == "x86" (
     set cmake_gen="Visual Studio 15 2017"
 )
 
-set build_config=%2
 if "%2" == "" (
-    set build_config="Release"
+    echo Must specify second argument as build config
+    goto :error
 )
+
+set build_config=%2
 
 set boost_dir=C:/local/boost_1_67_0
 set boost_lib_dir=%boost_dir%/lib%arch%-msvc-14.1
@@ -25,7 +27,14 @@ set boost_dl="https://iweb.dl.sourceforge.net/project/boost/boost-binaries/1.67.
 
 cd /D "%~dp0"
 set start_dir=%cd%
-set source_dir=%start_dir%/solidity
+
+if "%3" == "" (
+    set source_dir=%start_dir%/solidity
+) ELSE (
+    set source_dir=%start_dir%/solidity-%3
+)
+
+echo Build directory %source_dir%
 
 if exist %boost_lib_dir% (
     echo Boost already installed at %boost_lib_dir%, skipping download and install
