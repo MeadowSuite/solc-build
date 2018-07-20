@@ -5,7 +5,7 @@ then
     cd solidity
 else
     cd "solidity-$1"
-if
+fi
 
 sed -i -e 's/DCMAKE_POSITION_INDEPENDENT_CODE=${BUILD_SHARED_LIBS}/DCMAKE_POSITION_INDEPENDENT_CODE=ON/g' cmake/jsoncpp.cmake
 
