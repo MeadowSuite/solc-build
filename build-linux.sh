@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$(ls -A boost_1_67_0)" ]
+if [ ! "$(ls -A boost_1_67_0)" ]
 then
     wget https://downloads.sourceforge.net/project/boost/boost/1.67.0/boost_1_67_0.tar.bz2 -O boost_1_67_0.tar.bz2
     tar --bzip2 -xf boost_1_67_0.tar.bz2
