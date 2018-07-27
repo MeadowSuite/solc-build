@@ -18,7 +18,7 @@ before_build:
   - git submodule update --init --recursive || exit
 
 build_script:
-  - build-win.bat %arch% || exit
+  - build-win.bat %arch% Release || exit
   - 7z a win-%arch%.zip %APPVEYOR_BUILD_FOLDER%/solidity/build-Release-x%arch%/libsolc/Release/solc.dll || exit
   - appveyor PushArtifact win-%arch%.zip
 deploy:
