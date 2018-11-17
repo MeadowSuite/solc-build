@@ -55,6 +55,8 @@ if NOT exist %boost_lib_dir% (
 
 cd %source_dir%
 
+break>prerelease.txt
+
 set build_output_dir=build-%build_config%-x%arch%
 
 if exist "%build_output_dir%" (
