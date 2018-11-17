@@ -1,28 +1,32 @@
 [submodule "solidity"]
 	path = solidity
-url=https://github.com/MeadowSuite/solidity.git
+	url = https://github.com/MeadowSuite/solidity.git
 	branch = release
 [submodule "solidity-v0.4.19"]
 	path = solidity-v0.4.19
-url=https://github.com/MeadowSuite/solidity.git
+	url = https://github.com/MeadowSuite/solidity.git
 	branch = v0.4.19
 [submodule "solidity-v0.4.20"]
 	path = solidity-v0.4.20
-url=https://github.com/MeadowSuite/solidity.git
+	url = https://github.com/MeadowSuite/solidity.git
 	branch = v0.4.20
 [submodule "solidity-v0.4.21"]
 	path = solidity-v0.4.21
-url=https://github.com/MeadowSuite/solidity.git
+	url = https://github.com/MeadowSuite/solidity.git
 	branch = v0.4.21
 [submodule "solidity-v0.4.22"]
 	path = solidity-v0.4.22
-url=https://github.com/MeadowSuite/solidity.git
+	url = https://github.com/MeadowSuite/solidity.git
 	branch = v0.4.22
 [submodule "solidity-v0.4.23"]
 	path = solidity-v0.4.23
-url=https://github.com/MeadowSuite/solidity.git
+	url = https://github.com/MeadowSuite/solidity.git
 	branch = v0.4.23
 [submodule "solidity-v0.4.24"]
 	path = solidity-v0.4.24
-url=https://github.com/MeadowSuite/solidity.git
+	url = https://github.com/MeadowSuite/solidity.git
 	branch = v0.4.24
+[submodule "solidity-v0.4.25"]
+	path = solidity-v0.4.25
+	url = https://github.com/MeadowSuite/solidity.git
+	branch = v0.4.25
