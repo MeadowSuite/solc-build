@@ -22,10 +22,6 @@ matrix:
         - git submodule update --init --recursive
       script:
         - ./build-linux.sh
-      before_deploy:
-        - git config --local user.name "zone117x"
-        - git config --local user.email "zone117x@gmail.com"
-        - git tag "$(date +%F)"
       deploy:
         provider: releases
         api_key:
@@ -44,10 +40,6 @@ matrix:
         - git submodule update --init --recursive
       script:
         - ./build-macos.sh
-      before_deploy:
-        - git config --local user.name "zone117x"
-        - git config --local user.email "zone117x@gmail.com"
-        - git tag "$(date +%F)"
       deploy:
         provider: releases
         api_key:
