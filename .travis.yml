@@ -34,6 +34,7 @@ matrix:
         on:
           repo: MeadowSuite/solc-build
         skip_cleanup: true
+        draft: true
 
     - os: osx
       env:
@@ -55,3 +56,4 @@ matrix:
         on:
           repo: MeadowSuite/solc-build
         skip_cleanup: true
+        draft: true
