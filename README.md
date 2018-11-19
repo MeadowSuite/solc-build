@@ -3,7 +3,7 @@ Scripts to build dynamic solc libs for several platforms
 
 | Platform | Build |
 |----------|-------|
-| Windows x64 & x86 | [![Build status](https://ci.appveyor.com/api/projects/status/w8fq4rtk9fglmndj/branch/master?svg=true)](https://ci.appveyor.com/project/Meadow/solcnet/branch/master) |
+| Windows x64 & x86 | [![Build status](https://ci.appveyor.com/api/projects/status/4a7on057whqevhcw/branch/master?svg=true)](https://ci.appveyor.com/project/Meadow/solc-build/branch/master) |
 | Linux x64 | [![Build Status](https://badges.herokuapp.com/travis/MeadowSuite/solc-build?env=OS=linux_x64&label=build)](https://travis-ci.org/MeadowSuite/solc-build) |
 | MacOS x64 | [![Build Status](https://badges.herokuapp.com/travis/MeadowSuite/solc-build?env=OS=macos_x64&label=build)](https://travis-ci.org/MeadowSuite/solc-build) |
 
