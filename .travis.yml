@@ -32,7 +32,7 @@ matrix:
           secure: 1HK5Frxf2g4d3rP2lTVcZPNI5NRpcUsj5PFQfLQMU/O/q7eFPnLoVkbRzLejSNDyi9VPBMAhi/jlHDMGmLrEz8E8vlMU5ghzctoY+QeiS/ZhLVyk+P96pV8f48G9u3VEg7b1bq72RbVod84SOsNnZjuqHMBGXAlPkO38hhAmML1e/tkWgblECoz7COc64gqaJdqoozXrk9XWVO53zo6Tzkp8lYh5oc18JoSmuQ8YirPPKZ3taRhsg9YGBANJzoTiKQoT+nX7nBztoKmZ0gUC5SYtQ+SsDAiOfx2DUUQINgd6rznxvaTxWeUVMSxpzLq68sqMSigmo2xY9gxgKuoILZW4AvVI+PllB6qWQ5xZfqfoDrv34mrMjpreULRLiVqLuzg/Cp/WFTpw6veM7ut4A4wLntqaOPqFIs9qo+OcSioTaVGsFLO19TwQIeqCkNsZZlL5xEmuFKfJgdIQBW1EXZXRLIQOpAT/8Z344J/kujn+gpKvR5Mps8284vo57IzvEFjJyB9zPKvJHE+vyd+mdfV/y/w8M/1KEaJy+mYYS7BllVolvSFdRQN4CgaD0BMvNVgg85RLov2jpiNccPTQQjgXe3nDkYWJUUXIBw37mmBtlYlkFp1jihVoPkGdkUT/eCkcJHPbLyF5a8tiBQxTtVLOoXzrKtqrIAzk0AqvwqI=
         file: solidity/build/libsolc/libsolc.so
         on:
-          repo: hosho/solc-build
+          repo: MeadowSuite/solc-build
         skip_cleanup: true
 
     - os: osx
@@ -53,5 +53,5 @@ matrix:
           secure: 1HK5Frxf2g4d3rP2lTVcZPNI5NRpcUsj5PFQfLQMU/O/q7eFPnLoVkbRzLejSNDyi9VPBMAhi/jlHDMGmLrEz8E8vlMU5ghzctoY+QeiS/ZhLVyk+P96pV8f48G9u3VEg7b1bq72RbVod84SOsNnZjuqHMBGXAlPkO38hhAmML1e/tkWgblECoz7COc64gqaJdqoozXrk9XWVO53zo6Tzkp8lYh5oc18JoSmuQ8YirPPKZ3taRhsg9YGBANJzoTiKQoT+nX7nBztoKmZ0gUC5SYtQ+SsDAiOfx2DUUQINgd6rznxvaTxWeUVMSxpzLq68sqMSigmo2xY9gxgKuoILZW4AvVI+PllB6qWQ5xZfqfoDrv34mrMjpreULRLiVqLuzg/Cp/WFTpw6veM7ut4A4wLntqaOPqFIs9qo+OcSioTaVGsFLO19TwQIeqCkNsZZlL5xEmuFKfJgdIQBW1EXZXRLIQOpAT/8Z344J/kujn+gpKvR5Mps8284vo57IzvEFjJyB9zPKvJHE+vyd+mdfV/y/w8M/1KEaJy+mYYS7BllVolvSFdRQN4CgaD0BMvNVgg85RLov2jpiNccPTQQjgXe3nDkYWJUUXIBw37mmBtlYlkFp1jihVoPkGdkUT/eCkcJHPbLyF5a8tiBQxTtVLOoXzrKtqrIAzk0AqvwqI=
         file: solidity/build/libsolc/libsolc.dylib
         on:
-          repo: hosho/solc-build
+          repo: MeadowSuite/solc-build
         skip_cleanup: true
