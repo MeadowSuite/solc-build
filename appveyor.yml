@@ -30,7 +30,7 @@ deploy:
     secure: f6EFNwNS0jfHhqe8mjtCgIVyBlbGlCDNZH/Z2xTTlhLTpp1eFSPrBN9kZO9Uy8qx
   artifact: win-%arch%.zip
   force_update: true
-  draft: false
+  draft: true
   prerelease: false
   on:
     branch: master
