@@ -29,7 +29,7 @@ matrix:
       deploy:
         provider: releases
         api_key:
-          secure: 1HK5Frxf2g4d3rP2lTVcZPNI5NRpcUsj5PFQfLQMU/O/q7eFPnLoVkbRzLejSNDyi9VPBMAhi/jlHDMGmLrEz8E8vlMU5ghzctoY+QeiS/ZhLVyk+P96pV8f48G9u3VEg7b1bq72RbVod84SOsNnZjuqHMBGXAlPkO38hhAmML1e/tkWgblECoz7COc64gqaJdqoozXrk9XWVO53zo6Tzkp8lYh5oc18JoSmuQ8YirPPKZ3taRhsg9YGBANJzoTiKQoT+nX7nBztoKmZ0gUC5SYtQ+SsDAiOfx2DUUQINgd6rznxvaTxWeUVMSxpzLq68sqMSigmo2xY9gxgKuoILZW4AvVI+PllB6qWQ5xZfqfoDrv34mrMjpreULRLiVqLuzg/Cp/WFTpw6veM7ut4A4wLntqaOPqFIs9qo+OcSioTaVGsFLO19TwQIeqCkNsZZlL5xEmuFKfJgdIQBW1EXZXRLIQOpAT/8Z344J/kujn+gpKvR5Mps8284vo57IzvEFjJyB9zPKvJHE+vyd+mdfV/y/w8M/1KEaJy+mYYS7BllVolvSFdRQN4CgaD0BMvNVgg85RLov2jpiNccPTQQjgXe3nDkYWJUUXIBw37mmBtlYlkFp1jihVoPkGdkUT/eCkcJHPbLyF5a8tiBQxTtVLOoXzrKtqrIAzk0AqvwqI=
+          secure: "p6Ez9E37XtyTVBBSpu/Ya2V/0u7BvH/Pe74+V35AFF+Pobg+J1InKLuzLz/csAhBfZowS3Glcw+axTDKReiFRVVHeNRJ5eOsVEFrIj8YTeJpjaVri6U3uTHtLuf8sr0S7Eda+SaOhfrlDu+SqnDMWojidb64AdmAfGFCA9r+qxpROfal5oe16Y+VH1AaA5/hiqfRy9JNN+LDdh+KgOThtiGauTMqZ7vcCLZLXjTYZGc536mYc9u/LgP6B84vuAG9eJZ8ssqXq7oPeSl1FifabOqTICWxQZPxUzq39YogDSjjcqxeIXv7wnn8RU2EjKj+eOaplP2n5AUvch61ui9UfEN5s4++ZIuN/MVI5+/F6reOsYMv2SuT3l7ktKX61xeSGJePWhH3RnNxN3w7HCc2eAufF45YvWmMQvRUudiSdrFosDlzsbTj4I9/AD+Ceb/9kZHDMvRZL7mCEWqpoNQ86snp8sm4TUsG8/Oey+GElSmMpzEaa2NLYSqritf70kaC/D+EpH/kGgDKAUhLpibbj9XiZlEd4kwBZamGkojJ+kyOMBE0WOcewl/SeBn8cMKJFhoj8LBD8yNIkuKCV3gTy/q4F/vICk1FyYHGEskwxkOpqMrpTpUswDCatTpN+YSkq+G76pYv8HPBSXurmZk4VIUoXV/2T67jbyCn/NMij2I="
         file: solidity/build/libsolc/libsolc.so
         on:
           repo: MeadowSuite/solc-build
@@ -50,7 +50,7 @@ matrix:
       deploy:
         provider: releases
         api_key:
-          secure: 1HK5Frxf2g4d3rP2lTVcZPNI5NRpcUsj5PFQfLQMU/O/q7eFPnLoVkbRzLejSNDyi9VPBMAhi/jlHDMGmLrEz8E8vlMU5ghzctoY+QeiS/ZhLVyk+P96pV8f48G9u3VEg7b1bq72RbVod84SOsNnZjuqHMBGXAlPkO38hhAmML1e/tkWgblECoz7COc64gqaJdqoozXrk9XWVO53zo6Tzkp8lYh5oc18JoSmuQ8YirPPKZ3taRhsg9YGBANJzoTiKQoT+nX7nBztoKmZ0gUC5SYtQ+SsDAiOfx2DUUQINgd6rznxvaTxWeUVMSxpzLq68sqMSigmo2xY9gxgKuoILZW4AvVI+PllB6qWQ5xZfqfoDrv34mrMjpreULRLiVqLuzg/Cp/WFTpw6veM7ut4A4wLntqaOPqFIs9qo+OcSioTaVGsFLO19TwQIeqCkNsZZlL5xEmuFKfJgdIQBW1EXZXRLIQOpAT/8Z344J/kujn+gpKvR5Mps8284vo57IzvEFjJyB9zPKvJHE+vyd+mdfV/y/w8M/1KEaJy+mYYS7BllVolvSFdRQN4CgaD0BMvNVgg85RLov2jpiNccPTQQjgXe3nDkYWJUUXIBw37mmBtlYlkFp1jihVoPkGdkUT/eCkcJHPbLyF5a8tiBQxTtVLOoXzrKtqrIAzk0AqvwqI=
+          secure: "p6Ez9E37XtyTVBBSpu/Ya2V/0u7BvH/Pe74+V35AFF+Pobg+J1InKLuzLz/csAhBfZowS3Glcw+axTDKReiFRVVHeNRJ5eOsVEFrIj8YTeJpjaVri6U3uTHtLuf8sr0S7Eda+SaOhfrlDu+SqnDMWojidb64AdmAfGFCA9r+qxpROfal5oe16Y+VH1AaA5/hiqfRy9JNN+LDdh+KgOThtiGauTMqZ7vcCLZLXjTYZGc536mYc9u/LgP6B84vuAG9eJZ8ssqXq7oPeSl1FifabOqTICWxQZPxUzq39YogDSjjcqxeIXv7wnn8RU2EjKj+eOaplP2n5AUvch61ui9UfEN5s4++ZIuN/MVI5+/F6reOsYMv2SuT3l7ktKX61xeSGJePWhH3RnNxN3w7HCc2eAufF45YvWmMQvRUudiSdrFosDlzsbTj4I9/AD+Ceb/9kZHDMvRZL7mCEWqpoNQ86snp8sm4TUsG8/Oey+GElSmMpzEaa2NLYSqritf70kaC/D+EpH/kGgDKAUhLpibbj9XiZlEd4kwBZamGkojJ+kyOMBE0WOcewl/SeBn8cMKJFhoj8LBD8yNIkuKCV3gTy/q4F/vICk1FyYHGEskwxkOpqMrpTpUswDCatTpN+YSkq+G76pYv8HPBSXurmZk4VIUoXV/2T67jbyCn/NMij2I="
         file: solidity/build/libsolc/libsolc.dylib
         on:
           repo: MeadowSuite/solc-build
